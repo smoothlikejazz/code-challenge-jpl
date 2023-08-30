@@ -13,6 +13,15 @@ Mission control Detail Screen for active launch
     - Velocity
     - Altitude
 
+## Pages
+1. Landing login page
+   2. have a super simple login maybe just name
+2. Dashboard Page
+   3. show a list of launches for the logged in user
+3. Launch Details Page
+   4. show ALL the details for the launch with components
+
+
 # How To Run Locally
 
 1. Please insure running at least version
