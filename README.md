@@ -21,6 +21,10 @@ Mission control Detail Screen for active launch
 3. Launch Details Page
    4. show ALL the details for the launch with components
 
+## Features
+- Multiple users can login and have their own view of launches
+- Fullscreen is on several components
+- Launches have different statuses (Scheduled, Queued, In Flight, Cancelled and Completed)
 
 # How To Run Locally
 
@@ -34,3 +38,14 @@ Mission control Detail Screen for active launch
 # Known Issues
 
 - clientonly with the tailwind-elements causes a hydration node mismatch warning
+- because the long poll method is ran via localStorage, opening other browsers the longpoll timer will not start So basically this only works in 1 window
+- 
+
+# Stretch Goals
+- fix some of the mobile styles
+- enhance the launch form to have a date time picker
+- clean up tailwind classes make it more uniform, some components were copied from tailwind-elements
+- better form validation, im currently just using an alert.
+- Add details pages for rockets and launch pads, idea to show a carousel since API returns images
+  - https://api.spacexdata.com/v4/rockets/<rocketID>
+  - https://api.spacexdata.com/v4/launchpads/<launchPadId>
