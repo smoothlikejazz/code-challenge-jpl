@@ -42,6 +42,12 @@ export const useLaunchStore = defineStore('launch', {
                 userId: mainStore.activeUser.id
             })
         },
+        abortLaunch(id: string) {
+            const launch = this.launches.find(launch => launch.id === id)
+            if(launch) {
+                launch.status = LaunchStatus.Cancelled
+            }
+        },
     },
     getters: {
         // TODO: if time refactor this can be single function with launch status type

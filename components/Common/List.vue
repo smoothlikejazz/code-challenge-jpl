@@ -26,7 +26,7 @@
                   <td class="whitespace-nowrap px-6 py-4">{{  item.launchPad.name }}</td>
                   <td class="whitespace-nowrap px-6 py-4">{{  item.launchTime }}</td>
                   <td class="whitespace-nowrap px-6 py-4"> {{  item.status }}</td>
-                  <td class="whitespace-nowrap px-6 py-4"> <button v-if="item.status !== LaunchStatus.Cancelled && item.status !== LaunchStatus.Completed" class="btn bg-danger text-white">Abort</button></td>
+                  <td class="whitespace-nowrap px-6 py-4"> <button v-if="item.status !== LaunchStatus.Cancelled && item.status !== LaunchStatus.Completed" class="btn bg-danger text-white" @click="abortLaunch(item.id)">Abort</button></td>
                 </tr>
                 </tbody>
               </table>
@@ -41,11 +41,15 @@
   </div>
 </template>
 <script setup>
-import {LaunchStatus, useLaunchStore} from '~/store/launch';
+import { useLaunchStore } from '~/store/launch';
 const props = defineProps({
   items: Array,
   title: String
 })
 const { items } = toRefs(props)
 
+const launchStore = useLaunchStore()
+function abortLaunch(id) {
+  launchStore.abortLaunch(id)
+}
 </script>
