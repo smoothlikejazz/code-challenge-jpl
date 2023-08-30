@@ -31,3 +31,6 @@ Mission control Detail Screen for active launch
 5. start server ```yarn dev```
 
 
+# Known Issues
+
+- clientonly with the tailwind-elements causes a hydration node mismatch warning
