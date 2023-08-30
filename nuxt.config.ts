@@ -1,6 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  runtimeConfig: {
+    public: {
+      launchTimeHrConstraint: process.env.LAUNCH_TIME_HR_CONSTRAINT || 8,
+      countdownStart: process.env.LAUNCH_COUNTDOWN_START || 5,
+      launchDuration: process.env.LAUNCH_DURATION || 2,
+    }
+  },
   // basic config options
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
   pinia: {

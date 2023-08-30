@@ -9,6 +9,7 @@ module.exports = {
       {
         system: {
           ...require("daisyui/src/theming/themes")["[data-theme=dark]"],
+          "primary": "#044788",
         },
       },
     ],

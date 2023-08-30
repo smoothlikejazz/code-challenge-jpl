@@ -33,7 +33,16 @@ export const useLaunchStore = defineStore('launch', {
     state: (): State => ({
         launches: []
     }),
-    actions: {},
+    actions: {
+        addLaunch(launch: Launch) {
+            const mainStore= useMainStore()
+            this.launches.push({
+                ...launch,
+                id: uuidv4(),
+                userId: mainStore.activeUser.id
+            })
+        },
+    },
     getters: {
         // TODO: if time refactor this can be single function with launch status type
         scheduledLaunches: (state): Launch[] => {
