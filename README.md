@@ -45,7 +45,7 @@ https://github.com/smoothlikejazz/code-challenge-jpl/assets/7566382/12b9f586-c05
 
 - clientonly with the tailwind-elements causes a hydration node mismatch warning
 - because the long poll method is ran via localStorage, opening other browsers the longpoll timer will not start So basically this only works in 1 window
-- 
+- Because local storage is set and the poll continues to write to it. When trying to reset the state of data, simply deleting local storage will not work as it will write immediately back to it. So in order to reset, Logout, and then clear all Application storage in chrome dev console
 
 # Stretch Goals
 - fix some of the mobile styles
