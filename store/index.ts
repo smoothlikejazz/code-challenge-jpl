@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { useLaunchStore } from './launch'
 interface User {
     id?: string,
     name?: string,
@@ -7,6 +8,8 @@ interface User {
 interface State {
     userList: User[];
     activeUser: User,
+    now: object,
+    pollTimer: null | ReturnType<typeof setTimeout>,
 }
 
 export const useMainStore = defineStore('main', {
@@ -17,6 +20,8 @@ export const useMainStore = defineStore('main', {
         return {
             userList: [],
             activeUser: {},
+            now: (new Date()),
+            pollTimer: null,
         }
     },
     actions: {
@@ -33,7 +38,29 @@ export const useMainStore = defineStore('main', {
         },
         logout() {
             this.activeUser = {}
+        },
+        updateUserLocation(location: object) {
+            this.activeUser.location = location
+        },
+        startPollTimer() {
+            const launchStore= useLaunchStore()
+            if (!this.pollTimer) {
+                this.pollTimer = setInterval(() => {
+                    this.now = new Date()
+                    launchStore.evaluateLaunches()
+                }, 1000);
+            }
+        },
+        clearTimer(){
+            this.pollTimer = null
         }
     },
-    getters: {},
+    getters: {
+        hasLocation: (state) => {
+            return !!state.activeUser.location
+        },
+        currentTime: (state) => {
+            return state.now
+        }
+    },
 })

@@ -41,7 +41,7 @@
   </div>
 </template>
 <script setup>
-import { useLaunchStore } from '~/store/launch';
+import { useLaunchStore, LaunchStatus } from '~/store/launch';
 const props = defineProps({
   items: Array,
   title: String
