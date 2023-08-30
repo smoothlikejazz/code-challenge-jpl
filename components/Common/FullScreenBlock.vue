@@ -1,5 +1,5 @@
 <template>
-  <div v-bind="$attrs" class="bg-gray-600 rounded-md m-8">
+  <div v-bind="$attrs" class="bg-gray-600 rounded-md my-8 mx-2">
     <div class="flex justify-between px-3 pb-8 pt-2">
       <div>
         <h2 class="text-lg">{{ title }}</h2>

@@ -1,17 +1,17 @@
 <template>
-  <div class="flex">
+  <div class="flex w-full">
     <div class="mr-4" v-if="!isLaunchActive">
-     <span class="countdown font-mono text-6xl">
+     <span class="countdown font-mono text-xl md:text-6xl">
       H:<span :style="`--value:${timeToLaunch.hours};`"></span>
     </span>
     </div>
     <div class="mr-4" :class="`${isLaunchActive && 'text-red-700'}`">
-     <span class="countdown font-mono text-6xl">
+     <span class="countdown font-mono  text-xl md:text-6xl">
       M:<span :style="`--value:${timeToLaunch.minutes};`"></span>
     </span>
     </div>
     <div class="mr-4" :class="`${isLaunchActive && 'text-red-700'}`">
-     <span class="countdown font-mono text-6xl">
+     <span class="countdown font-mono  text-xl md:text-6xl">
       S:<span :style="`--value:${timeToLaunch.seconds};`"></span>
     </span>
     </div>

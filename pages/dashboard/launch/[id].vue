@@ -9,20 +9,20 @@
       <button class="btn" @click="toggleFullScreen">Fullscreen</button>
     </section>
 
-    <section class="flex" v-if="isScheduledLaunch">
+    <section class="flex w-full" v-if="isScheduledLaunch">
       <FullScreenBlock title="Time Until Launch" class="w-full">
         <BlockCountDown :launch="launchItem" />
       </FullScreenBlock>
     </section>
 
-    <section class="flex">
-      <FullScreenBlock title="Weather" class="w-1/3">
+    <section class="flex flex-col md:flex-row w-full">
+      <FullScreenBlock title="Weather" class="md:w-1/3">
         <BlockWeather :launchPad="launchItem.launchPad" :launch-time="launchItem.launchTime" />
       </FullScreenBlock>
-      <FullScreenBlock title="User Information" class="w-1/3">
+      <FullScreenBlock title="User Information" class="md:w-1/3">
         <BlockUser :launchPad="launchItem.launchPad" />
       </FullScreenBlock>
-      <FullScreenBlock title="Launch Information" class="w-1/3">
+      <FullScreenBlock title="Launch Information" class="md:w-1/3">
         <BlockLaunchMeta :launch="launchItem" />
       </FullScreenBlock>
     </section>
