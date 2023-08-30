@@ -1,6 +1,6 @@
 <template>
   <div class="border-r-4 p-4 border-solid border-sky-500 hover:border-dotted">
-    <h1>{{ title }}</h1>
+    <h1 class="text-2xl md:text-4xl">{{ title }}</h1>
     <div v-if="items.length">
       <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
