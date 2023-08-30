@@ -13,6 +13,12 @@ Mission control Detail Screen for active launch
     - Velocity
     - Altitude
 
+
+
+https://github.com/smoothlikejazz/code-challenge-jpl/assets/7566382/12b9f586-c056-4ffa-b727-1a467874cb74
+
+
+
 ## Pages
 1. Landing login page
    2. have a super simple login maybe just name
